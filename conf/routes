@@ -3,7 +3,8 @@
 # ~~~~
 
 # Home page
-GET		/api/geolocation/cities		controllers.Application.listCities
+GET		/api/geolocation/cities				controllers.Application.listCities
+GET		/api/geolocation/cities/:iso		controllers.Application.getCity(iso: String)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

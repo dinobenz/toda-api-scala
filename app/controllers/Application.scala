@@ -11,4 +11,12 @@ class Application extends Controller {
   	Ok(Json.toJson(cities))
   }
 
+  def getCity(iso: String) = Action {
+  	val city = cities find { e => e.iso == iso }
+  	city match {
+  		case Some(x: models.City.City) => Ok(Json.toJson(city))
+  		case _ => NoContent
+  	}
+  }
+
 }
